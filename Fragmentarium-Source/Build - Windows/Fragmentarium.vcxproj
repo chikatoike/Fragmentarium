@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E41D8CD9-8F00-3204-A980-0998ECF8427E}</ProjectGuid>
+    <RootNamespace>Fragmentarium</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">tmp\obj\debug_shared\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</IgnoreImportLibrary>
+    <EmbedManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</EmbedManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">tmp\obj\release_shared\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</IgnoreImportLibrary>
+    <EmbedManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EmbedManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200 -EHsc %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..;$(QT4DIR)\include\QtScript;$(QT4DIR)\include\QtCore;$(QT4DIR)\include\QtXml;$(QT4DIR)\include\QtGui;$(QT4DIR)\include\QtOpenGL;$(QT4DIR)\include;$(QT4DIR)\include\ActiveQt;tmp\moc\debug_shared;.;$(QT4DIR)\mkspecs\win32-msvc2005;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;QT_LARGEFILE_SUPPORT;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;QT_DLL;QT_OPENGL_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AssemblerListingLocation>tmp\obj\debug_shared\</AssemblerListingLocation>
+      <ObjectFileName>tmp\obj\debug_shared\</ObjectFileName>
+      <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>QtScriptd4.lib;opengl32.lib;glu32.lib;gdi32.lib;user32.lib;qtmaind.lib;QtGuid4.lib;QtCored4.lib;QtOpenGLd4.lib;QtXmld4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>debug\Fragmentarium.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(QT4DIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>
+      </ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200 -EHsc %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..;$(QT4DIR)\include\QtScript;$(QT4DIR)\include\QtCore;$(QT4DIR)\include\QtXml;$(QT4DIR)\include\QtGui;$(QT4DIR)\include;$(QT4DIR)\include\ActiveQt;tmp\moc\debug_shared;.;$(QT4DIR)\mkspecs\win32-msvc2005;$(QT4DIR)\include\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;UNICODE;QT_LARGEFILE_SUPPORT;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;QT_DLL;QT_NO_DEBUG;QT_GUI_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AssemblerListingLocation>tmp\obj\release_shared\</AssemblerListingLocation>
+      <ObjectFileName>tmp\obj\release_shared\</ObjectFileName>
+      <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <DisableSpecificWarnings>4127;4512;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>QtScript4.lib;opengl32.lib;glu32.lib;gdi32.lib;user32.lib;qtmain.lib;QtGui4.lib;QtCore4.lib;QtOpenGL4.lib;QtXml4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>release\Fragmentarium.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(QT4DIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AssemblyDebug>
+      </AssemblyDebug>
+      <ProgramDatabaseFile>
+      </ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\SyntopiaCore\Logging\ListWidgetLogger.cpp" />
+    <ClCompile Include="..\SyntopiaCore\Logging\Logging.cpp" />
+    <ClCompile Include="..\SyntopiaCore\Math\Matrix4.cpp" />
+    <ClCompile Include="..\SyntopiaCore\Math\Random.cpp" />
+    <ClCompile Include="..\SyntopiaCore\Math\Vector3.cpp" />
+    <ClCompile Include="..\SyntopiaCore\Misc\ColorUtils.cpp" />
+    <ClCompile Include="..\SyntopiaCore\Misc\MiniParser.cpp" />
+    <ClCompile Include="..\SyntopiaCore\Misc\Misc.cpp" />
+    <ClCompile Include="..\SyntopiaCore\Misc\Persistence.cpp" />
+    <ClCompile Include="..\SyntopiaCore\Misc\Version.cpp" />
+    <ClCompile Include="..\ThirdPartyCode\glextensions.cpp" />
+    <ClCompile Include="..\ThirdPartyCode\hdrloader.cpp" />
+    <ClCompile Include="tmp\moc\release_shared\moc_DisplayWidget.cpp" />
+    <ClCompile Include="tmp\moc\release_shared\moc_MainWindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_MainWindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_OutputDialog.cpp" />
+    <ClCompile Include="tmp\rcc\debug_shared\qrc_Fragmentarium.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\rcc\release_shared\qrc_Fragmentarium.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\rmoc_AnimationController.cpp" />
+    <ClCompile Include="tmp\moc\rmoc_VariableEditor.cpp" />
+    <ClCompile Include="tmp\moc\rmoc_VariableWidget.cpp" />
+    <ClCompile Include="..\Fragmentarium\Main.cpp" />
+    <ClCompile Include="..\Fragmentarium\GUI\AnimationController.cpp" />
+    <ClCompile Include="..\Fragmentarium\GUI\CameraControl.cpp" />
+    <ClCompile Include="..\Fragmentarium\GUI\DisplayWidget.cpp" />
+    <ClCompile Include="..\Fragmentarium\GUI\FileManager.cpp" />
+    <ClCompile Include="..\Fragmentarium\GUI\MainWindow.cpp">
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <AssemblerOutput Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">All</AssemblerOutput>
+    </ClCompile>
+    <ClCompile Include="..\Fragmentarium\GUI\OutputDialog.cpp" />
+    <ClCompile Include="..\Fragmentarium\GUI\VariableEditor.cpp" />
+    <ClCompile Include="..\Fragmentarium\GUI\VariableWidget.cpp" />
+    <ClCompile Include="..\Fragmentarium\Parser\Preprocessor.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\SyntopiaCore\Logging\ListWidgetLogger.h" />
+    <ClInclude Include="..\SyntopiaCore\Logging\Logging.h" />
+    <ClInclude Include="..\SyntopiaCore\Math\Matrix4.h" />
+    <ClInclude Include="..\SyntopiaCore\Math\Random.h" />
+    <ClInclude Include="..\SyntopiaCore\Math\Vector3.h" />
+    <ClInclude Include="..\SyntopiaCore\Exceptions\Exception.h" />
+    <ClInclude Include="..\SyntopiaCore\Misc\ColorUtils.h" />
+    <ClInclude Include="..\SyntopiaCore\Misc\MiniParser.h" />
+    <ClInclude Include="..\SyntopiaCore\Misc\Misc.h" />
+    <ClInclude Include="..\SyntopiaCore\Misc\Persistence.h" />
+    <ClInclude Include="..\SyntopiaCore\Misc\Version.h" />
+    <ClInclude Include="..\ThirdPartyCode\glextensions.h" />
+    <ClInclude Include="..\ThirdPartyCode\hdrloader.h" />
+    <ClInclude Include="..\ThirdPartyCode\MersenneTwister\MersenneTwister.h" />
+    <CustomBuild Include="..\Fragmentarium\GUI\AnimationController.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc_AnimationController.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QT4DIR)\bin\moc.exe -DNDEBUG -D_WINDOWS -DUNICODE -DQT_LARGEFILE_SUPPORT -DWIN32 -D_CRT_SECURE_NO_DEPRECATE -D_CRT_NONSTDC_NO_DEPRECATE -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT  -I "$(QT4DIR)\include\QtCore" -I "$(QT4DIR)\include\QtCore" -I "$(QT4DIR)\include\QtGui" -I "$(QT4DIR)\include\QtGui" -I "$(QT4DIR)\include" -I "$(QT4DIR)\include\ActiveQt" -I "tmp\moc" -I "." -I"$(QT4DIR)\mkspecs\win32-msvc2005" ../Fragmentarium/GUI/AnimationController.h -o tmp\moc\rmoc_AnimationController.cpp
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">tmp\moc\rmoc_AnimationController.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc_AnimationController.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QT4DIR)\bin\moc.exe -DNDEBUG -D_WINDOWS -DUNICODE -DQT_LARGEFILE_SUPPORT -DWIN32 -D_CRT_SECURE_NO_DEPRECATE -D_CRT_NONSTDC_NO_DEPRECATE -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT  -I "$(QT4DIR)\include\QtCore" -I "$(QT4DIR)\include\QtCore" -I "$(QT4DIR)\include\QtGui" -I "$(QT4DIR)\include\QtGui" -I "$(QT4DIR)\include" -I "$(QT4DIR)\include\ActiveQt" -I "tmp\moc" -I "." -I"$(QT4DIR)\mkspecs\win32-msvc2005" ../Fragmentarium/GUI/AnimationController.h -o tmp\moc\rmoc_AnimationController.cpp
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">tmp\moc\rmoc_AnimationController.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\Fragmentarium\GUI\CameraControl.h" />
+    <CustomBuild Include="..\Fragmentarium\GUI\DisplayWidget.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">DisplayWidget</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QT4DIR)\bin\moc.exe -DNDEBUG -D_WINDOWS -DUNICODE -DQT_LARGEFILE_SUPPORT -DWIN32 -D_CRT_SECURE_NO_DEPRECATE -D_CRT_NONSTDC_NO_DEPRECATE -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT  -I "$(QT4DIR)\include\QtCore" -I "$(QT4DIR)\include\QtCore" -I "$(QT4DIR)\include\QtGui" -I "$(QT4DIR)\include\QtGui" -I "$(QT4DIR)\include" -I "$(QT4DIR)\include\ActiveQt" -I "tmp\moc\debug_release" -I "." -I"$(QT4DIR)\mkspecs\win32-msvc2005" ../Fragmentarium/GUI/DisplayWidget.h -o tmp\moc\release_shared\moc_DisplayWidget.cpp
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">tmp\moc\release_shared\moc_DisplayWidget.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\Fragmentarium\GUI\FileManager.h" />
+    <CustomBuild Include="..\Fragmentarium\GUI\MainWindow.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing MainWindow</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QT4DIR)\bin\moc.exe -DNDEBUG -D_WINDOWS -DUNICODE -DQT_LARGEFILE_SUPPORT -DWIN32 -D_CRT_SECURE_NO_DEPRECATE -D_CRT_NONSTDC_NO_DEPRECATE -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT  -I "$(QT4DIR)\include\QtCore" -I "$(QT4DIR)\include\QtCore" -I "$(QT4DIR)\include\QtGui" -I "$(QT4DIR)\include\QtGui" -I "$(QT4DIR)\include" -I "$(QT4DIR)\include\ActiveQt" -I "tmp\moc\debug_shared" -I "." -I"$(QT4DIR)\mkspecs\win32-msvc2005" ../Fragmentarium/GUI/MainWindow.h -o tmp\moc\debug_shared\moc_MainWindow.cpp
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">tmp\moc\debug_shared\moc_MainWindow.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing MainWindow</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QT4DIR)\bin\moc.exe -DNDEBUG -D_WINDOWS -DUNICODE -DQT_LARGEFILE_SUPPORT -DWIN32 -D_CRT_SECURE_NO_DEPRECATE -D_CRT_NONSTDC_NO_DEPRECATE -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT  -I "$(QT4DIR)\include\QtCore" -I "$(QT4DIR)\include\QtCore" -I "$(QT4DIR)\include\QtGui" -I "$(QT4DIR)\include\QtGui" -I "$(QT4DIR)\include" -I "$(QT4DIR)\include\ActiveQt" -I "tmp\moc\debug_release" -I "." -I"$(QT4DIR)\mkspecs\win32-msvc2005" ../Fragmentarium/GUI/MainWindow.h -o tmp\moc\release_shared\moc_MainWindow.cpp
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">tmp\moc\release_shared\moc_MainWindow.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\Fragmentarium\GUI\OutputDialog.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc output dialog</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QT4DIR)\bin\moc.exe -DNDEBUG -D_WINDOWS -DUNICODE -DQT_LARGEFILE_SUPPORT -DWIN32 -D_CRT_SECURE_NO_DEPRECATE -D_CRT_NONSTDC_NO_DEPRECATE -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT  -I "$(QT4DIR)\include\QtCore" -I "$(QT4DIR)\include\QtCore" -I "$(QT4DIR)\include\QtGui" -I "$(QT4DIR)\include\QtGui" -I "$(QT4DIR)\include" -I "$(QT4DIR)\include\ActiveQt" -I "tmp\moc\debug_release" -I "." -I"$(QT4DIR)\mkspecs\win32-msvc2005" ../Fragmentarium/GUI/OutputDialog.h -o tmp\moc\release_shared\moc_OutputDialog.cpp
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">tmp\moc\release_shared\moc_OutputDialog.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\Fragmentarium\GUI\VariableEditor.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc variableEditor</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QT4DIR)\bin\moc.exe -DNDEBUG -D_WINDOWS -DUNICODE -DQT_LARGEFILE_SUPPORT -DWIN32 -D_CRT_SECURE_NO_DEPRECATE -D_CRT_NONSTDC_NO_DEPRECATE -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT  -I "$(QT4DIR)\include\QtCore" -I "$(QT4DIR)\include\QtCore" -I "$(QT4DIR)\include\QtGui" -I "$(QT4DIR)\include\QtGui" -I "$(QT4DIR)\include" -I "$(QT4DIR)\include\ActiveQt" -I "tmp\moc" -I "." -I"$(QT4DIR)\mkspecs\win32-msvc2005" ../Fragmentarium/GUI/VariableEditor.h -o tmp\moc\rmoc_VariableEditor.cpp
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">tmp\moc\rmoc_VariableEditor.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc variableEditor</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QT4DIR)\bin\moc.exe -DNDEBUG -D_WINDOWS -DUNICODE -DQT_LARGEFILE_SUPPORT -DWIN32 -D_CRT_SECURE_NO_DEPRECATE -D_CRT_NONSTDC_NO_DEPRECATE -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT  -I "$(QT4DIR)\include\QtCore" -I "$(QT4DIR)\include\QtCore" -I "$(QT4DIR)\include\QtGui" -I "$(QT4DIR)\include\QtGui" -I "$(QT4DIR)\include" -I "$(QT4DIR)\include\ActiveQt" -I "tmp\moc" -I "." -I"$(QT4DIR)\mkspecs\win32-msvc2005" ../Fragmentarium/GUI/VariableEditor.h -o tmp\moc\rmoc_VariableEditor.cpp
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">tmp\moc\rmoc_VariableEditor.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\Fragmentarium\GUI\VariableWidget.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc VariableWidget.h </Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QT4DIR)\bin\moc.exe -DNDEBUG -D_WINDOWS -DUNICODE -DQT_LARGEFILE_SUPPORT -DWIN32 -D_CRT_SECURE_NO_DEPRECATE -D_CRT_NONSTDC_NO_DEPRECATE -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT  -I "$(QT4DIR)\include\QtCore" -I "$(QT4DIR)\include\QtCore" -I "$(QT4DIR)\include\QtGui" -I "$(QT4DIR)\include\QtGui" -I "$(QT4DIR)\include" -I "$(QT4DIR)\include\ActiveQt" -I "tmp\moc" -I "." -I"$(QT4DIR)\mkspecs\win32-msvc2005" ../Fragmentarium/GUI/VariableWidget.h -o tmp\moc\rmoc_VariableWidget.cpp
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">tmp\moc\rmoc_VariableWidget.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\Fragmentarium\Parser\Preprocessor.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Fragmentarium.qrc">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">RCC Fragmentarium.qrc</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QT4DIR)\bin\rcc.exe -name Fragmentarium ..\Fragmentarium.qrc -o tmp\rcc\debug_shared\qrc_Fragmentarium.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QT4DIR)\bin\rcc.exe;Icons\new.png;Icons\copy.png;Icons\cut.png;Icons\save.png;Icons\paste.png;Icons\open.png;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">tmp\rcc\debug_shared\qrc_Fragmentarium.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">RCC Fragmentarium.qrc</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QT4DIR)\bin\rcc.exe -name Fragmentarium ..\Fragmentarium.qrc -o tmp\rcc\release_shared\qrc_Fragmentarium.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QT4DIR)\bin\rcc.exe;Icons\new.png;Icons\copy.png;Icons\cut.png;Icons\save.png;Icons\paste.png;Icons\open.png;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">tmp\rcc\release_shared\qrc_Fragmentarium.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <None Include="..\Icons\agt_internet.png" />
+    <None Include="..\Icons\copy.png" />
+    <None Include="..\Icons\cut.png" />
+    <None Include="..\Icons\documentinfo.png" />
+    <None Include="..\Icons\exit.png" />
+    <None Include="..\Icons\fileclose.png" />
+    <None Include="..\Icons\filesaveas.png" />
+    <None Include="..\Icons\folder.png" />
+    <None Include="..\Icons\Fragmentarium.png" />
+    <None Include="..\Icons\mail_new.png" />
+    <None Include="..\Icons\new.png" />
+    <None Include="..\Icons\open.png" />
+    <None Include="..\Icons\padlocka.png" />
+    <None Include="..\Icons\padlockb.png" />
+    <None Include="..\Icons\paste.png" />
+    <None Include="..\Icons\render.png" />
+    <None Include="..\Icons\save.png" />
+    <None Include="..\bugs.txt" />
+    <None Include="..\changelog.txt" />
+    <None Include="..\notes.txt" />
+    <None Include="..\roadmap.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Fragmentarium.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
