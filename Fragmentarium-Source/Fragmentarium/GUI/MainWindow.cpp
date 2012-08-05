@@ -1542,6 +1542,7 @@ namespace Fragmentarium {
 			if (loadingSucceded) {
 				tabInfo.append(TabInfo(displayName, textEdit, false, true));
 				setRecentFile(filename);
+				setWatchingTarget(filename);
 
 			} else {
 				tabInfo.append(TabInfo(displayName, textEdit, true));
@@ -1567,6 +1568,7 @@ namespace Fragmentarium {
 			setWindowTitle(QString("%1 - %2").arg(tabTitle).arg("Fragmentarium"));
 			stackedTextEdits->setCurrentWidget(t.textEdit);
 			tabBar->setTabText(tabBar->currentIndex(), tabTitle);
+			setWatchingTarget(t.filename);
 		}
 
 		void MainWindow::closeTab() {
@@ -1771,8 +1773,49 @@ namespace Fragmentarium {
 			}
 		}
 
+		void MainWindow::setWatchingTarget(const QString& path)
+		{
+			if (!watchingPath.isEmpty()) {
+				fileWatcher.removePath(watchingPath);
+			}
+			else {
+				reloadAction = new QAction(this);
+				connect(reloadAction, SIGNAL(triggered()), this, SLOT(onFileReload()));
+				connect(&fileWatcher, SIGNAL(fileChanged(const QString&)), this, SLOT(onFileChange(const QString&)));
+			}
+			fileWatcher.addPath(path);
+			watchingPath = path;
+		}
 
+		void MainWindow::onFileChange(const QString& path)
+		{
+			reloadAction->activate(QAction::Trigger);
+		}
+
+		void MainWindow::onFileReload()
+		{
+			if (!tabInfo[tabBar->currentIndex()].unsaved) {
+				QTextEdit* textEdit = tabInfo[tabBar->currentIndex()].textEdit;
+				QString filename = watchingPath;
+
+				INFO(QString("Loading file: %1").arg(filename));
+				QFile file(filename);
+				if (!file.open(QFile::ReadOnly | QFile::Text)) {
+					textEdit->setPlainText(QString("Cannot read file %1:\n%2.").arg(filename).arg(file.errorString()));
+				} else {
+					QTextStream in(&file);
+					QApplication::setOverrideCursor(Qt::WaitCursor);
+					textEdit->setPlainText(in.readAll());
+					QApplication::restoreOverrideCursor();
+					statusBar()->showMessage(QString("Loaded file: %1").arg(filename), 2000);
+				}
+
+				tabInfo[tabBar->currentIndex()].unsaved = false;
+				tabChanged(tabBar->currentIndex());
+			}
+
+			render();
+		}
 	}
-
 }
 

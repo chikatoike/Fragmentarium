@@ -9,6 +9,7 @@
 #include <QComboBox>
 #include <QLabel>
 #include <QGLShaderProgram>
+#include <QFileSystemWatcher>
 
 #include "DisplayWidget.h"
 #include "../../SyntopiaCore/Misc/Version.h"
@@ -206,6 +207,15 @@ namespace Fragmentarium {
 			QLabel* frameLabel;
 			QSpinBox* frameSpinBox;
 
+			// extra member
+			void setWatchingTarget(const QString& fileName);
+			QFileSystemWatcher fileWatcher;
+			QString watchingPath;
+			QAction *reloadAction;
+
+		private slots:
+			void onFileChange(const QString& path);
+			void onFileReload();
 		};
 
 		// A modified QTextEdit with an extended context menu
